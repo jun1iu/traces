@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. These are the only place colours are written down.
+ * Components use the semantic names (bg-surface, text-muted, ...).
+ * They never use raw palette values.
+ * src/tokens/tokens.test.ts checks that every token in tokens.ts is defined
+ * here for both themes.
+ */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-hover: #f2f2f3;
+  --border: #e4e4e7;
+  --foreground: #18181b;
+  --muted: #71717a;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-foreground: #ffffff;
+  --danger: #dc2626;
+  --ring: #6366f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --background: #09090b;
+    --surface: #131316;
+    --surface-hover: #1c1c21;
+    --border: #2a2a30;
+    --foreground: #f4f4f5;
+    --muted: #a1a1aa;
+    --accent: #818cf8;
+    --accent-hover: #a5b4fc;
+    --accent-foreground: #0b0b1a;
+    --danger: #f87171;
+    --ring: #a5b4fc;
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #09090b;
+  --surface: #131316;
+  --surface-hover: #1c1c21;
+  --border: #2a2a30;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-foreground: #0b0b1a;
+  --danger: #f87171;
+  --ring: #a5b4fc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-danger: var(--danger);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
