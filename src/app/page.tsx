@@ -1,4 +1,5 @@
 import { ButtonDemo, SegmentedControlDemo, SwitchDemo } from "@/components/site/demos";
+import Link from "next/link";
 import { Specimen } from "@/components/site/specimen";
 
 export default function Home() {
@@ -14,6 +15,21 @@ export default function Home() {
           reader, and its motion follows your system settings. Try switching the theme or tabbing
           through the page.
         </p>
+        <Link
+          href="/returns"
+          className="group inline-flex w-fit items-center gap-3 rounded-full border border-border bg-surface py-1.5 pr-4 pl-1.5 text-sm transition-colors hover:border-accent"
+        >
+          <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-accent-foreground">
+            New
+          </span>
+          <span>
+            <span className="font-medium">Returns assistant</span>
+            <span className="text-muted">: an AI chat interface with visible tool steps</span>
+          </span>
+          <span aria-hidden className="text-muted transition-transform group-hover:translate-x-0.5">
+            →
+          </span>
+        </Link>
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">
