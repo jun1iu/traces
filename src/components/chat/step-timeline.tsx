@@ -11,13 +11,22 @@ import type { Phase, Step } from "./use-assistant";
  * The agent's work, shown as it happens. While the agent is working every step is
  * visible; once it answers, the steps fold into one summary line that can be reopened.
  */
-export function StepTimeline({ steps, phase }: { steps: Step[]; phase: Phase }) {
+export function StepTimeline({
+  steps,
+  phase,
+  alwaysOpen = false,
+}: {
+  steps: Step[];
+  phase: Phase;
+  /** Keep every step visible after the answer (used to compare against folding). */
+  alwaysOpen?: boolean;
+}) {
   const [openOverride, setOpenOverride] = useState<boolean | null>(null);
   const listId = useId();
   if (steps.length === 0) return null;
 
   const working = phase === "working";
-  const open = openOverride ?? working;
+  const open = openOverride ?? (alwaysOpen || working);
   const failed = steps.some((s) => s.state === "failed");
   const summary = working
     ? "Working…"

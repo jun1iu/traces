@@ -12,23 +12,24 @@ const studies = [
     kicker: "Data-dense interface",
     title: "Finding the one bad run in five thousand",
     summary:
-      "Designing a tool for inspecting AI agent runs: aligning steps with their timing, failure that survives colour blindness, and a list that renders 25 rows for 5,000 runs.",
+      "Designing a tool for inspecting AI agent runs: aligning steps with their timing, failure that survives colour blindness, and a list that keeps under 30 rows in the page for 5,000 runs.",
     ready: true,
   },
   {
-    href: "/returns",
+    href: "/work/returns-assistant",
     kicker: "AI interface",
     title: "Designing for an agent you can’t fully predict",
     summary:
-      "The Returns assistant: visible tool steps, a person approves money, and failure as a state. Write-up coming next.",
-    ready: false,
+      "The Returns assistant: steps that appear live then fold away, a person approves the money, failure you can act on, and one screen-reader announcement per reply instead of 25.",
+    ready: true,
   },
   {
-    href: "/tokens",
+    href: "/work/design-system",
     kicker: "Design system",
-    title: "Tokens as data",
-    summary: "A theme is one swap of CSS variables, enforced by a test. Write-up coming next.",
-    ready: false,
+    title: "Tokens as data, components with no surprises",
+    summary:
+      "Semantic tokens enforced by a test, a theme that never flashes, and a loading button that keeps its name for screen readers.",
+    ready: true,
   },
 ] as const;
 

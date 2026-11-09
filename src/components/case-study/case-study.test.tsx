@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { CvdCompare } from "./cvd-compare";
@@ -57,5 +57,49 @@ describe("VirtualCounter", () => {
     const list = screen.getByRole("listbox");
     expect(list).toHaveAccessibleName("Runs, 5,000 shown");
     expect(within(list).getAllByRole("option").length).toBeLessThan(30);
+  });
+});
+
+import { AnnouncementCompare } from "./announcement-compare";
+import { ButtonNameDemo } from "./button-name-demo";
+import { StepDisplayCompare } from "./step-display-compare";
+
+describe("AnnouncementCompare", () => {
+  it("counts 25 live-region updates against 2 announcements for the same reply", async () => {
+    const user = userEvent.setup();
+    render(<AnnouncementCompare />);
+    await user.click(screen.getByRole("button", { name: "Play" }));
+    await waitFor(() => expect(screen.getByRole("button", { name: "Replay" })).toBeEnabled(), {
+      timeout: 8000,
+    });
+    expect(screen.getByTestId("count-live")).toHaveTextContent("25");
+    expect(screen.getByTestId("count-once")).toHaveTextContent("2");
+  }, 10000);
+});
+
+describe("StepDisplayCompare", () => {
+  it("offers the three modes and plays a real request", async () => {
+    const user = userEvent.setup();
+    render(<StepDisplayCompare />);
+    expect(screen.getByRole("radio", { name: "Live, then fold" })).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
+    await user.click(screen.getByRole("button", { name: "Play" }));
+    expect(
+      await screen.findByText("Reading your request", {}, { timeout: 4000 }),
+    ).toBeInTheDocument();
+  });
+});
+
+describe("ButtonNameDemo", () => {
+  it("puts both buttons into a busy state together", async () => {
+    const user = userEvent.setup();
+    render(<ButtonNameDemo />);
+    await user.click(screen.getByRole("button", { name: "Start loading" }));
+    const busy = screen
+      .getAllByRole("button")
+      .filter((b) => b.getAttribute("aria-busy") === "true");
+    expect(busy).toHaveLength(2);
   });
 });
