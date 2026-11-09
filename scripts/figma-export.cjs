@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- a plain CommonJS Node script, not app code */
 // Export a rendered page as an SVG with real text and named groups, for import into Figma.
 // usage: npm run dev, then
 //   node scripts/figma-export.cjs http://localhost:3000/runs design/figma/run-explorer-light light
