@@ -17,6 +17,10 @@ export const colorTokens = [
   { name: "accent-foreground", role: "Text on accent" },
   { name: "danger", role: "Destructive actions, errors" },
   { name: "ring", role: "Focus indicator" },
+  { name: "success", role: "Passed status icon (always paired with a label)" },
+  { name: "span-llm", role: "Model call in a trace (data viz slot 1)" },
+  { name: "span-tool", role: "Tool call in a trace (data viz slot 2)" },
+  { name: "span-retrieval", role: "Retrieval in a trace (data viz slot 3)" },
 ] as const;
 
 export type ColorToken = (typeof colorTokens)[number]["name"];

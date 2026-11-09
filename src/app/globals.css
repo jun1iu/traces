@@ -22,6 +22,10 @@
   --accent-foreground: #ffffff;
   --danger: #dc2626;
   --ring: #6366f1;
+  --success: #0ca30c;
+  --span-llm: #2a78d6;
+  --span-tool: #eb6834;
+  --span-retrieval: #1baf7a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +42,10 @@
     --accent-foreground: #0b0b1a;
     --danger: #f87171;
     --ring: #a5b4fc;
+    --success: #0ca30c;
+    --span-llm: #3987e5;
+    --span-tool: #d95926;
+    --span-retrieval: #199e70;
   }
 }
 
@@ -54,6 +62,10 @@
   --accent-foreground: #0b0b1a;
   --danger: #f87171;
   --ring: #a5b4fc;
+  --success: #0ca30c;
+  --span-llm: #3987e5;
+  --span-tool: #d95926;
+  --span-retrieval: #199e70;
 }
 
 @theme inline {
@@ -68,6 +80,10 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-danger: var(--danger);
   --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-span-llm: var(--span-llm);
+  --color-span-tool: var(--span-tool);
+  --color-span-retrieval: var(--span-retrieval);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
