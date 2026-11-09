@@ -34,6 +34,16 @@ npm run dev        # http://localhost:3000
 | `npm run build`  | Production build. Every page is statically prerendered.              |
 | `npm run format` | Runs Prettier, which also sorts Tailwind classes                     |
 
+## Deploying
+
+Live at **https://playground.jun-liu.net**.
+
+Merging to `main` deploys automatically: the server builds the `Dockerfile` and
+swaps the running container. If a build fails, the running version stays up.
+
+The image uses Next's `standalone` output and runs as the unprivileged `node`
+user on a read-only filesystem.
+
 ## Structure
 
 ```
@@ -63,4 +73,5 @@ src/
 - [ ] Toast stack with swipe-to-dismiss
 - [ ] Playwright visual regression and axe checks in CI
 - [ ] Case-study write-ups for each component: the problem, the options, and the decision
-- [ ] Deploy (Vercel) and link from a portfolio
+- [x] Deploy
+- [ ] Link from a portfolio
