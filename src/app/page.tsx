@@ -8,23 +8,34 @@ export default function Home() {
       <header className="flex max-w-2xl flex-col gap-4">
         <p className="font-mono text-xs tracking-wider text-accent uppercase">Design engineering</p>
         <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-          Small components with the details sweated.
+          Interfaces for AI tools, with the thinking shown.
         </h1>
         <p className="text-lg text-pretty text-muted">
-          Each piece here is built on shared design tokens. It works with a keyboard and a screen
-          reader, and its motion follows your system settings. Try switching the theme or tabbing
-          through the page.
+          A{" "}
+          <Link href="/runs" className="text-foreground underline underline-offset-4">
+            run explorer
+          </Link>{" "}
+          for inspecting agents, a{" "}
+          <Link href="/returns" className="text-foreground underline underline-offset-4">
+            chat assistant
+          </Link>{" "}
+          that shows its work, and the components and{" "}
+          <Link href="/tokens" className="text-foreground underline underline-offset-4">
+            tokens
+          </Link>{" "}
+          underneath. Everything works with a keyboard and a screen reader, and the case studies
+          explain the decisions behind it.
         </p>
         <Link
-          href="/returns"
+          href="/work/run-explorer"
           className="group inline-flex w-fit items-center gap-3 rounded-full border border-border bg-surface py-1.5 pr-4 pl-1.5 text-sm transition-colors hover:border-accent"
         >
           <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-accent-foreground">
             New
           </span>
           <span>
-            <span className="font-medium">Returns assistant</span>
-            <span className="text-muted">: an AI chat interface with visible tool steps</span>
+            <span className="font-medium">Case study: the Run explorer</span>
+            <span className="text-muted">, the decisions and what each one cost</span>
           </span>
           <span aria-hidden className="text-muted transition-transform group-hover:translate-x-0.5">
             →

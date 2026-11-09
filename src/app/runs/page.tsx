@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { RunExplorer } from "@/components/runs/run-explorer";
 
 export const metadata: Metadata = {
@@ -27,7 +28,11 @@ export default function RunsPage() {
           <kbd className="font-mono text-foreground">Tab</kbd> into the steps.
         </p>
         <p className="text-xs text-muted">
-          Sample data, generated from a fixed seed. No real model or customer data.
+          Sample data, generated from a fixed seed. No real model or customer data.{" "}
+          <Link href="/work/run-explorer" className="text-foreground underline underline-offset-4">
+            Read how it was designed
+          </Link>
+          .
         </p>
       </header>
       <RunExplorer />
