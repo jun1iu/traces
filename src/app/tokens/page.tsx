@@ -21,7 +21,7 @@ export default function TokensPage() {
           {colorTokens.map((token) => (
             <li
               key={token.name}
-              className="flex items-center gap-4 rounded-xl border border-border bg-surface p-3"
+              className="flex min-w-0 items-center gap-4 rounded-xl border border-border bg-surface p-3"
             >
               <span
                 className="size-12 shrink-0 rounded-lg border border-border"

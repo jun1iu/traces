@@ -16,14 +16,14 @@ export function SiteHeader() {
             </span>
             <span className="sr-only sm:not-sr-only">Playground</span>
           </Link>
+          <Link href="/work" className="text-muted transition-colors hover:text-foreground">
+            Work
+          </Link>
           <Link href="/runs" className="text-muted transition-colors hover:text-foreground">
             Runs
           </Link>
           <Link href="/returns" className="text-muted transition-colors hover:text-foreground">
             Assistant
-          </Link>
-          <Link href="/tokens" className="text-muted transition-colors hover:text-foreground">
-            Tokens
           </Link>
         </nav>
         <ThemeToggle />

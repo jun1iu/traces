@@ -126,7 +126,7 @@ export function SpanTree({ run, selectedId, onSelect }: SpanTreeProps) {
               key={t}
               className={cn(
                 "absolute top-1.5",
-                t === 0 ? "left-0" : t === 1 ? "right-0" : "-translate-x-1/2",
+                t === 0 ? "left-0" : t === 1 ? "right-0" : "-translate-x-1/2 max-sm:hidden",
               )}
               style={t > 0 && t < 1 ? { left: `${t * 100}%` } : undefined}
             >
@@ -149,7 +149,8 @@ export function SpanTree({ run, selectedId, onSelect }: SpanTreeProps) {
           const left = (span.start / total) * 100;
           const width = Math.max(0.6, (span.duration / total) * 100);
           const kind = kindStyles[span.kind];
-          const labelAfter = left + width < 78;
+          // Duration label: after the bar if there's room, else before it, else inside its end.
+          const labelPlace = left + width < 78 ? "after" : left > 22 ? "before" : "inside";
           return (
             <div
               key={span.id}
@@ -235,11 +236,20 @@ export function SpanTree({ run, selectedId, onSelect }: SpanTreeProps) {
                   }}
                 />
                 <span
-                  className="absolute top-1/2 -translate-y-1/2 text-[11px] whitespace-nowrap text-muted tabular-nums"
+                  className={cn(
+                    "absolute top-1/2 -translate-y-1/2 text-[11px] whitespace-nowrap tabular-nums",
+                    labelPlace !== "inside"
+                      ? "text-muted"
+                      : span.kind === "agent"
+                        ? "font-medium text-foreground"
+                        : "font-medium text-white",
+                  )}
                   style={
-                    labelAfter
+                    labelPlace === "after"
                       ? { left: `calc(${left + width}% + 6px)` }
-                      : { right: `calc(${100 - left}% + 6px)` }
+                      : labelPlace === "before"
+                        ? { right: `calc(${100 - left}% + 6px)` }
+                        : { right: `calc(${100 - left - width}% + 6px)` }
                   }
                 >
                   {formatMs(span.duration)}
