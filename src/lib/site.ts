@@ -1,8 +1,9 @@
 /** Site-wide facts shared by metadata, the share image, robots.txt and the sitemap. */
 export const site = {
-  name: "Design Engineering Playground",
-  url: "https://playground.jun-liu.net",
-  description: "Interface components built with care for motion, accessibility and design tokens.",
+  name: "Traces",
+  url: "https://traces.jun-liu.net",
+  description:
+    "Interfaces for AI tools, with the thinking shown: a run explorer, an AI returns assistant and the components underneath, by Jun Liu.",
 } as const;
 
 /** Every public route, in the order the sitemap lists them. */

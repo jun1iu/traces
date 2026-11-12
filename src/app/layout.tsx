@@ -24,7 +24,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.name,
+    default: `${site.name}: interfaces for AI tools, by Jun Liu`,
     template: `%s · ${site.name}`,
   },
   description: site.description,

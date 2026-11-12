@@ -153,7 +153,7 @@ export default function RunExplorerCaseStudy() {
 
         <Decision
           title="Validate the palette, don’t eyeball it"
-          chose="Step colours from a categorical palette I checked with a validator against the playground’s own light and dark backgrounds: worst colour-blind separation ΔE 9.2 (light) and 9.4 (dark), above the target of 8."
+          chose="Step colours from a categorical palette I checked with a validator against the site’s own light and dark backgrounds: worst colour-blind separation ΔE 9.2 (light) and 9.4 (dark), above the target of 8."
           rejected="Picking colours that looked right on my screen."
           because="Colour-blind safety is computable, so I computed it. The check also flagged that the light-mode aqua is only 2.82:1 against white, below the 3:1 guideline."
           cost="That aqua needs relief: every step shows its type as text next to the colour, so contrast never carries meaning alone. It also limits the chart to three categorical colours before it must fall back to labels."
@@ -266,7 +266,7 @@ export default function RunExplorerCaseStudy() {
             Open the Run explorer
           </Link>
           <a
-            href="https://github.com/jun1iu/typescript-project/tree/main/src/components/runs"
+            href="https://github.com/jun1iu/traces/tree/main/src/components/runs"
             className="rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
             Read the code

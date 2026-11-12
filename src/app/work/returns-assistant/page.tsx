@@ -21,7 +21,7 @@ const caught = [
     what: "Adding “Assistant” pushed the theme switcher off phones",
     found:
       "The header grew to 400 px on a 390 px screen, so the switcher was 10 px off the edge on every page, not just this one.",
-    fix: "On phones the “Playground” wordmark becomes a compact mark; screen readers still hear the name.",
+    fix: "On phones the header keeps just the name and drops “Design engineer”, so the three links and the switcher fit.",
   },
   {
     what: "Enter didn’t send while a reply was streaming",
@@ -205,7 +205,7 @@ export default function ReturnsAssistantCaseStudy() {
             Try the assistant
           </Link>
           <a
-            href="https://github.com/jun1iu/typescript-project/tree/main/src/components/chat"
+            href="https://github.com/jun1iu/traces/tree/main/src/components/chat"
             className="rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
             Read the code

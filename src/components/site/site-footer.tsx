@@ -9,7 +9,7 @@ export function SiteFooter() {
           <Link href="/tokens" className="hover:text-foreground">
             Tokens
           </Link>
-          <a href="https://github.com/jun1iu/typescript-project" className="hover:text-foreground">
+          <a href="https://github.com/jun1iu/traces" className="hover:text-foreground">
             Source on GitHub
           </a>
         </nav>

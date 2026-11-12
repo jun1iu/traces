@@ -1,8 +1,10 @@
-# Design Engineering Playground
+# Traces
 
-A TypeScript project for small interface components, built the way a design
-engineer would build them. Each one uses shared design tokens, works with a
-keyboard and a screen reader, and has motion that respects the user's settings.
+Interfaces for AI tools, with the thinking shown. Traces is Jun Liu's design
+engineering work: a run explorer for inspecting agent runs, a chat assistant
+that shows its work, and the components and tokens underneath. Everything uses
+shared design tokens, works with a keyboard and a screen reader, and has motion
+that respects the user's settings.
 
 ## What's here
 
@@ -39,7 +41,7 @@ npm run dev        # http://localhost:3000
 
 ## Deploying
 
-Live at **https://playground.jun-liu.net**.
+Live at **https://traces.jun-liu.net**. The old address, playground.jun-liu.net, redirects there.
 
 Hosted on Vercel. Merging to `main` deploys to production automatically, and
 every other branch gets a preview URL. If a build fails, the running version
