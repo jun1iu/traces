@@ -38,6 +38,18 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  redirects() {
+    // The site was called Playground at playground.jun-liu.net. Old links land on the same
+    // page at the new address, with a permanent (308) redirect.
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "playground.jun-liu.net" }],
+        destination: "https://traces.jun-liu.net/:path*",
+        permanent: true,
+      },
+    ];
+  },
   headers() {
     // Dev mode needs eval for fast refresh, so the policy applies to production builds only.
     if (process.env.NODE_ENV !== "production") return [];
