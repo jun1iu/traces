@@ -264,7 +264,7 @@ export default function RunExplorerCaseStudy() {
             Open the Run explorer
           </Link>
           <a
-            href="https://git.jun-liu.net/jzzliu/typescript-project/src/branch/main/src/components/runs"
+            href="https://github.com/jun1iu/typescript-project/tree/main/src/components/runs"
             className="rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
             Read the code

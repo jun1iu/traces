@@ -38,7 +38,7 @@ export default function ReturnsPage() {
           A chat front end for{" "}
           <a
             className="text-foreground underline underline-offset-4"
-            href="https://git.jun-liu.net/jzzliu/relay-returns"
+            href="https://github.com/jun1iu/relay-returns"
           >
             Relay Returns
           </a>

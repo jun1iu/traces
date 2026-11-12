@@ -177,7 +177,7 @@ export default function DesignSystemCaseStudy() {
             See the components
           </Link>
           <a
-            href="https://git.jun-liu.net/jzzliu/typescript-project/src/branch/main/src/components/ui"
+            href="https://github.com/jun1iu/typescript-project/tree/main/src/components/ui"
             className="rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
             Read the code

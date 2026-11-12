@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/site/providers";
 import { SiteHeader } from "@/components/site/site-header";
+import { site } from "@/lib/site";
 import { themeScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -16,11 +17,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "Design Engineering Playground",
-    template: "%s · Design Engineering Playground",
+    default: site.name,
+    template: `%s · ${site.name}`,
   },
-  description: "Interface components built with care for motion, accessibility and design tokens.",
+  description: site.description,
+  // Link previews. The image comes from app/opengraph-image.tsx.
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: site.name,
+    description: site.description,
+    url: "/",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
