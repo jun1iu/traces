@@ -11,17 +11,19 @@
 :root,
 [data-theme="light"] {
   color-scheme: light;
-  --background: #fafafa;
+  /* Cool paper and blue-graphite ink. The interface itself is monochrome:
+     hue is reserved for data (the span-* tokens), so colour always means something. */
+  --background: #f4f5f7;
   --surface: #ffffff;
-  --surface-hover: #f2f2f3;
-  --border: #e4e4e7;
-  --foreground: #18181b;
-  --muted: #71717a;
-  --accent: #4f46e5;
-  --accent-hover: #4338ca;
+  --surface-hover: #eceef2;
+  --border: #d8dce3;
+  --foreground: #1a1f2b;
+  --muted: #5b6272;
+  --accent: #1a1f2b;
+  --accent-hover: #323949;
   --accent-foreground: #ffffff;
-  --danger: #dc2626;
-  --ring: #6366f1;
+  --danger: #c8261e;
+  --ring: #2a78d6;
   --success: #0ca30c;
   --span-llm: #2a78d6;
   --span-tool: #eb6834;
@@ -31,17 +33,17 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --background: #09090b;
-    --surface: #131316;
-    --surface-hover: #1c1c21;
-    --border: #2a2a30;
-    --foreground: #f4f4f5;
-    --muted: #a1a1aa;
-    --accent: #818cf8;
-    --accent-hover: #a5b4fc;
-    --accent-foreground: #0b0b1a;
+    --background: #0e1117;
+    --surface: #151a22;
+    --surface-hover: #1d2430;
+    --border: #262d38;
+    --foreground: #e8ebf0;
+    --muted: #8d95a5;
+    --accent: #e8ebf0;
+    --accent-hover: #ffffff;
+    --accent-foreground: #0e1117;
     --danger: #f87171;
-    --ring: #a5b4fc;
+    --ring: #5b9cf0;
     --success: #0ca30c;
     --span-llm: #3987e5;
     --span-tool: #d95926;
@@ -51,17 +53,17 @@
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --background: #09090b;
-  --surface: #131316;
-  --surface-hover: #1c1c21;
-  --border: #2a2a30;
-  --foreground: #f4f4f5;
-  --muted: #a1a1aa;
-  --accent: #818cf8;
-  --accent-hover: #a5b4fc;
-  --accent-foreground: #0b0b1a;
+  --background: #0e1117;
+  --surface: #151a22;
+  --surface-hover: #1d2430;
+  --border: #262d38;
+  --foreground: #e8ebf0;
+  --muted: #8d95a5;
+  --accent: #e8ebf0;
+  --accent-hover: #ffffff;
+  --accent-foreground: #0e1117;
   --danger: #f87171;
-  --ring: #a5b4fc;
+  --ring: #5b9cf0;
   --success: #0ca30c;
   --span-llm: #3987e5;
   --span-tool: #d95926;
@@ -85,8 +87,8 @@
   --color-span-tool: var(--span-tool);
   --color-span-retrieval: var(--span-retrieval);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-instrument);
+  --font-mono: var(--font-plex-mono);
 
   --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -94,6 +96,39 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Headlines: Instrument Sans narrowed on its width axis, so long headings stay
+   compact and read as one shape. Body text stays at full width. */
+@utility font-display {
+  font-family: var(--font-instrument);
+  font-stretch: 84%;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.02;
+}
+
+/* Data values (durations, IDs, counts) line up in columns. */
+@utility font-data {
+  font-family: var(--font-plex-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* The home page trace replays once on load (see hero-trace.tsx). */
+@keyframes trace-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes trace-label {
+  from {
+    opacity: 0;
+  }
+}
+
+::selection {
+  background: color-mix(in oklab, var(--span-llm) 28%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

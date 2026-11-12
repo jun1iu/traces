@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Tokens" };
 export default function TokensPage() {
   return (
     <div className="flex flex-col gap-14">
-      <header className="flex max-w-2xl flex-col gap-3">
-        <h1 className="text-3xl font-semibold tracking-tight">Tokens</h1>
+      <header className="flex max-w-2xl flex-col gap-4">
+        <h1 className="font-display text-[2.75rem] sm:text-6xl">Tokens</h1>
         <p className="text-muted">
           Components use these semantic names and never raw values. That is why the whole site
           changes theme by swapping one set of CSS variables. Toggle the theme to see each swatch
@@ -21,7 +21,7 @@ export default function TokensPage() {
           {colorTokens.map((token) => (
             <li
               key={token.name}
-              className="flex min-w-0 items-center gap-4 rounded-xl border border-border bg-surface p-3"
+              className="flex min-w-0 items-center gap-4 rounded-lg border border-border bg-surface p-3"
             >
               <span
                 className="size-12 shrink-0 rounded-lg border border-border"
@@ -58,7 +58,7 @@ export default function TokensPage() {
 
 function TokenTable({ caption, rows }: { caption: string; rows: [string, string][] }) {
   return (
-    <table className="w-full overflow-hidden rounded-xl border border-border bg-surface text-sm">
+    <table className="w-full overflow-hidden rounded-lg border border-border bg-surface text-sm">
       <caption className="mb-2 text-left text-sm text-muted">{caption}</caption>
       <tbody>
         {rows.map(([name, value]) => (

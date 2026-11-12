@@ -20,7 +20,8 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-accent text-accent-foreground hover:bg-accent-hover",
   secondary: "border border-border bg-surface text-foreground hover:bg-surface-hover",
   ghost: "text-foreground hover:bg-surface-hover",
-  danger: "bg-danger text-white hover:brightness-110",
+  // Dark mode lightens danger, so its text flips with the theme (white on light, ink on dark).
+  danger: "bg-danger text-accent-foreground hover:brightness-110",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

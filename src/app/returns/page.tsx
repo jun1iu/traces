@@ -29,11 +29,8 @@ const notes = [
 export default function ReturnsPage() {
   return (
     <div className="flex flex-col gap-10">
-      <header className="flex max-w-2xl flex-col gap-3">
-        <p className="font-mono text-xs tracking-wider text-accent uppercase">AI interface</p>
-        <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          Returns assistant
-        </h1>
+      <header className="flex max-w-2xl flex-col gap-4">
+        <h1 className="font-display text-[2.75rem] text-balance sm:text-6xl">Returns assistant</h1>
         <p className="text-pretty text-muted">
           A chat front end for{" "}
           <a
@@ -51,7 +48,7 @@ export default function ReturnsPage() {
 
       <ul className="grid gap-4 sm:grid-cols-2">
         {notes.map(([title, body]) => (
-          <li key={title} className="rounded-xl border border-border p-4">
+          <li key={title} className="rounded-lg border border-border p-4">
             <p className="text-sm font-semibold">{title}</p>
             <p className="mt-1 text-sm text-muted">{body}</p>
           </li>

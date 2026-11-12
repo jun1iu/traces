@@ -67,7 +67,7 @@ export function ReturnsAssistant({ pace }: Props) {
   return (
     <section
       aria-label="Relay Returns assistant"
-      className="flex h-[min(72vh,680px)] min-h-[460px] flex-col overflow-hidden rounded-2xl border border-border bg-surface"
+      className="flex h-[min(72vh,680px)] min-h-[460px] flex-col overflow-hidden rounded-lg border border-border bg-surface"
     >
       <header className="flex items-center justify-between gap-3 border-b border-border px-4 py-3 sm:px-5">
         <div className="flex min-w-0 items-center gap-3">
@@ -119,7 +119,7 @@ export function ReturnsAssistant({ pace }: Props) {
           submit();
         }}
       >
-        <div className="flex items-end gap-2 rounded-xl border border-border bg-background p-1.5 pl-3 transition-[border-color,box-shadow] focus-within:border-accent focus-within:ring-4 focus-within:ring-ring/30">
+        <div className="flex items-end gap-2 rounded-lg border border-border bg-background p-1.5 pl-3 transition-[border-color,box-shadow] focus-within:border-accent focus-within:ring-4 focus-within:ring-ring/30">
           <label htmlFor="returns-input" className="sr-only">
             Message
           </label>

@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Page not found" };
 export default function NotFound() {
   return (
     <div className="flex max-w-2xl flex-col gap-4">
-      <p className="font-mono text-xs tracking-wider text-accent uppercase">404</p>
-      <h1 className="text-4xl font-semibold tracking-tight text-balance">
+      <p className="font-data text-sm text-muted">404</p>
+      <h1 className="font-display text-5xl text-balance sm:text-6xl">
         There’s nothing at this address.
       </h1>
       <p className="text-lg text-pretty text-muted">

@@ -22,11 +22,15 @@ export function RunStats({ summary, highlight }: { summary: Summary; highlight?:
 
   return (
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-      <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-5 lg:grid-cols-5">
+      <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-5 lg:grid-cols-5">
         {tiles.map((t) => (
-          <div key={t.label} className="flex flex-col justify-between gap-3 bg-surface px-4 py-3">
+          <div
+            key={t.label}
+            // Five tiles in two columns on phones: the last one takes the full row, so no empty cell shows.
+            className="flex flex-col justify-between gap-3 bg-surface px-4 py-3 last:col-span-2 sm:last:col-span-1"
+          >
             <dt className="text-xs text-muted">{t.label}</dt>
-            <dd className="text-2xl font-semibold tracking-tight">{t.value}</dd>
+            <dd className="font-display text-3xl tabular-nums">{t.value}</dd>
           </div>
         ))}
       </dl>
@@ -45,7 +49,7 @@ function DurationChart({ bins, highlight }: { bins: Summary["histogram"]; highli
       : bins.findIndex((b, i) => highlight < b.to || i === bins.length - 1);
 
   return (
-    <figure className="rounded-xl border border-border bg-surface px-4 pt-3 pb-2">
+    <figure className="rounded-lg border border-border bg-surface px-4 pt-3 pb-2">
       <figcaption className="flex items-baseline justify-between gap-3 text-xs">
         <span className="font-medium text-foreground">Duration distribution</span>
         {hi >= 0 && (

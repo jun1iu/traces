@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-/** A framed showcase for one component: the live demo plus the details behind it. */
+/** One component on show: the live demo, then what it is and what's worth noticing. */
 export function Specimen({
   title,
   description,
@@ -13,18 +13,17 @@ export function Specimen({
   children: ReactNode;
 }) {
   return (
-    <section className="overflow-hidden rounded-2xl border border-border bg-surface">
-      <div className="flex min-h-48 items-center justify-center border-b border-border bg-background/60 p-8">
-        {children}
-      </div>
-      <div className="flex flex-col gap-3 p-6">
-        <div>
-          <h2 className="text-base font-semibold">{title}</h2>
-          <p className="mt-1 text-sm text-muted">{description}</p>
-        </div>
-        <ul className="flex flex-wrap gap-2 text-xs text-muted">
+    <section className="flex flex-col bg-surface">
+      <div className="flex min-h-52 items-center justify-center p-8">{children}</div>
+      <div className="flex flex-1 flex-col gap-3 border-t border-border p-6">
+        <h3 className="font-display text-xl">{title}</h3>
+        <p className="text-sm text-pretty text-muted">{description}</p>
+        <ul className="mt-auto flex flex-col gap-1 pt-2 text-sm">
           {notes.map((note) => (
-            <li key={note} className="rounded-full border border-border px-2.5 py-1">
+            <li key={note} className="flex gap-2">
+              <span aria-hidden className="text-muted">
+                –
+              </span>
               {note}
             </li>
           ))}

@@ -41,7 +41,7 @@ export function StepDisplayCompare() {
         </Button>
       </div>
       <div className="flex min-h-[260px] flex-col gap-3 px-4 py-4 text-[15px]">
-        <p className="self-end rounded-2xl rounded-br-md bg-accent px-4 py-2 text-accent-foreground">
+        <p className="self-end rounded-lg rounded-br-md bg-accent px-4 py-2 text-accent-foreground">
           {prompt}
         </p>
         {!reply && (

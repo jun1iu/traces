@@ -126,7 +126,7 @@ export function RunExplorer({ runs = allRuns() }: { runs?: Run[] }) {
 
       <RunStats summary={summary} highlight={active?.duration} />
 
-      <div className="overflow-hidden rounded-xl border border-border bg-surface md:h-[min(76vh,820px)] md:min-h-[560px]">
+      <div className="overflow-hidden rounded-lg border border-border bg-surface md:h-[min(76vh,820px)] md:min-h-[560px]">
         <SplitPane
           orientation="horizontal"
           defaultSize={32}
