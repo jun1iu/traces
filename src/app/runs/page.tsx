@@ -11,13 +11,8 @@ export const metadata: Metadata = {
 export default function RunsPage() {
   return (
     <div data-wide className="flex flex-col gap-6">
-      <header className="flex max-w-3xl flex-col gap-3">
-        <p className="font-mono text-xs tracking-wider text-accent uppercase">
-          Data-dense interface
-        </p>
-        <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          Run explorer
-        </h1>
+      <header className="flex max-w-3xl flex-col gap-4">
+        <h1 className="font-display text-[2.75rem] text-balance sm:text-6xl">Run explorer</h1>
         <p className="text-pretty text-muted">
           A tool for inspecting AI agent runs. 5,000 runs, each with its model calls, tool calls and
           retrievals laid out on a timeline. The list renders only what is on screen, the panes

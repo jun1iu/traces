@@ -11,10 +11,8 @@ export default function Error({ error, retry }: { error: unknown; retry: () => v
 
   return (
     <div role="alert" className="flex max-w-2xl flex-col gap-4">
-      <p className="font-mono text-xs tracking-wider text-danger uppercase">Error</p>
-      <h1 className="text-4xl font-semibold tracking-tight text-balance">
-        This page hit a problem.
-      </h1>
+      <p className="font-data text-sm text-danger">Error</p>
+      <h1 className="font-display text-5xl text-balance sm:text-6xl">This page hit a problem.</h1>
       <p className="text-lg text-pretty text-muted">
         Nothing you did caused it. Try loading it again, or go back to the{" "}
         <Link href="/" className="text-foreground underline underline-offset-4">

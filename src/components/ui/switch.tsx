@@ -63,7 +63,11 @@ export function Switch({
       >
         <motion.span
           aria-hidden
-          className="size-5 rounded-full bg-white shadow-sm"
+          className={cn(
+            "size-5 rounded-full shadow-sm transition-colors duration-200",
+            // On, the track is ink, which is light in dark mode, so the thumb takes the contrasting colour.
+            isOn ? "bg-accent-foreground" : "bg-white",
+          )}
           initial={false}
           animate={{ x: isOn ? 20 : 0 }}
           transition={springs.snappy}

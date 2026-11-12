@@ -30,7 +30,7 @@ export function DraftCard({ draft }: { draft: RefundDraft }) {
     ["Policy", draft.policy],
   ];
   return (
-    <figure className="rounded-xl border border-dashed border-border bg-background/60 p-4">
+    <figure className="rounded-lg border border-dashed border-border bg-background/60 p-4">
       <figcaption className="flex items-center justify-between gap-3">
         <span className="text-sm font-semibold">Refund draft</span>
         <span className="inline-flex items-center gap-1.5 text-xs text-muted">

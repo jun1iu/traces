@@ -56,16 +56,18 @@ export default function RunExplorerCaseStudy() {
   return (
     <article className="flex flex-col gap-10">
       <header className="flex max-w-3xl flex-col gap-4">
-        <Link
-          href="/work"
-          className="w-fit text-sm text-muted transition-colors hover:text-foreground"
-        >
-          ← Work
-        </Link>
-        <p className="font-mono text-xs tracking-wider text-accent uppercase">
-          Case study · Data-dense interface
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+        <nav aria-label="Breadcrumb" className="text-sm text-muted">
+          <Link href="/work" className="transition-colors hover:text-foreground">
+            Case studies
+          </Link>
+          <span aria-hidden className="px-2">
+            /
+          </span>
+          <span aria-current="page" className="text-foreground">
+            Run explorer
+          </span>
+        </nav>
+        <h1 className="max-w-[18ch] font-display text-5xl text-balance sm:text-7xl sm:leading-[0.98]">
           Finding the one bad run in five thousand
         </h1>
         <P className="text-lg text-muted">
@@ -176,7 +178,7 @@ export default function RunExplorerCaseStudy() {
           because="Five thousand Tab stops would make the page unusable from the keyboard. With one per region, Tab moves between list, steps and inspector, and the arrows move within them."
           cost="Custom keyboard handling had to be built and tested, and it must match what screen-reader users expect from a listbox and a tree."
         >
-          <div className="overflow-hidden rounded-xl border border-border">
+          <div className="overflow-hidden rounded-lg border border-border">
             <table className="w-full text-sm">
               <caption className="sr-only">Keyboard shortcuts</caption>
               <tbody>
@@ -221,7 +223,7 @@ export default function RunExplorerCaseStudy() {
         </P>
         <ol className="grid gap-4">
           {caught.map((c, i) => (
-            <li key={c.what} className="rounded-xl border border-border bg-surface p-4">
+            <li key={c.what} className="rounded-lg border border-border bg-surface p-4">
               <p className="font-semibold">
                 <span className="font-mono text-sm text-muted">
                   {String(i + 1).padStart(2, "0")}{" "}

@@ -35,16 +35,18 @@ export default function ReturnsAssistantCaseStudy() {
   return (
     <article className="flex flex-col gap-10">
       <header className="flex max-w-3xl flex-col gap-4">
-        <Link
-          href="/work"
-          className="w-fit text-sm text-muted transition-colors hover:text-foreground"
-        >
-          ← Work
-        </Link>
-        <p className="font-mono text-xs tracking-wider text-accent uppercase">
-          Case study · AI interface
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+        <nav aria-label="Breadcrumb" className="text-sm text-muted">
+          <Link href="/work" className="transition-colors hover:text-foreground">
+            Case studies
+          </Link>
+          <span aria-hidden className="px-2">
+            /
+          </span>
+          <span aria-current="page" className="text-foreground">
+            Returns assistant
+          </span>
+        </nav>
+        <h1 className="max-w-[18ch] font-display text-5xl text-balance sm:text-7xl sm:leading-[0.98]">
           Designing for an agent you can’t fully predict
         </h1>
         <P className="text-lg text-muted">
@@ -167,7 +169,7 @@ export default function ReturnsAssistantCaseStudy() {
       <Section id="review" kicker="04 · What review caught" title="Three things that surprised me">
         <ol className="grid gap-4">
           {caught.map((c, i) => (
-            <li key={c.what} className="rounded-xl border border-border bg-surface p-4">
+            <li key={c.what} className="rounded-lg border border-border bg-surface p-4">
               <p className="font-semibold">
                 <span className="font-mono text-sm text-muted">
                   {String(i + 1).padStart(2, "0")}{" "}
