@@ -26,7 +26,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  // Self-contained server bundle for the Docker image (see Dockerfile). Vercel ignores it.
+  // Self-contained server bundle for the Docker image (see Dockerfile).
   output: "standalone",
   cacheComponents: true,
   partialPrefetching: true,

@@ -43,13 +43,12 @@ npm run dev        # http://localhost:3000
 
 Live at **https://traces.jun-liu.net**. The old address, playground.jun-liu.net, redirects there.
 
-Hosted on Vercel. Merging to `main` deploys to production automatically, and
-every other branch gets a preview URL. If a build fails, the running version
-stays up.
+Hosted on the home server. It checks `main` every minute and rebuilds on a new
+commit; if a build fails, the running version stays up. There are no preview
+URLs: run `npm run dev` to try a branch.
 
-The `Dockerfile` is kept for running the app as a container elsewhere. It uses
-Next's `standalone` output and runs as the unprivileged `node` user on a
-read-only filesystem.
+The `Dockerfile` builds the container. It uses Next's `standalone` output and
+runs as the unprivileged `node` user on a read-only filesystem.
 
 ## Structure
 
