@@ -30,7 +30,7 @@ export default function Home() {
             <br className="hidden sm:inline" /> with the thinking shown.
           </h1>
           <p className="max-w-[54ch] text-lg leading-relaxed text-pretty text-muted sm:text-xl">
-            I’m Jun Liu, a design engineer in Hong Kong. I design and build the tools people use to
+            I’m Jun Liu, a design engineer based between Hong Kong and Phoenix. I design and build the tools people use to
             watch, debug and trust AI agents, like the run below, and the components underneath
             them. Everything works with a keyboard and a screen reader.
           </p>
